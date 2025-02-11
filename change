@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+swaybg -i /home/nyx/Templates/.dotfiles/wallpapers/$(ls /home/nyx/Templates/.dotfiles/wallpapers | shuf -n 1) &

@@ -30,7 +30,7 @@ window {
 }
 
 
-#custom-updates , #idle_inhibitor ,#pulseaudio, #clock, #memory, #cpu, #tray, #battery, #custom-power, #backlight, #custom-launcher, #workspaces {
+#custom-updates , #idle_inhibitor ,#pulseaudio, #clock, #memory, #cpu, #tray, #battery, #custom-power, #backlight, #custom-launcher, #workspaces, #custom-weather {
     color: #ffffff;
     background: #000000;
     border-radius: 13px;
