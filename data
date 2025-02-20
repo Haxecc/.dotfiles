@@ -1,0 +1,28 @@
+#!/bin/bash
+
+clear
+
+COLUMNS=$(tput cols)
+
+
+title="󰥔 "
+title+=$(date +%R)
+title+=" | "
+title+="󰕾 "
+title+=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
+title+=" | "
+title+=" "
+title+=$(brightnessctl | grep -oP '\(\K[0-9]+%')
+title+=" | "
+title+=" "
+title+=$(free | grep Mem | awk '{printf("%d%%", $3/$2 * 100.0)}')
+title+=" | "
+title+=" "
+title+=$(lscpu | grep -oP '\K[0-9]+%')
+title+=" | "
+title+="󰁹 "
+title+=$(upower -d | grep -oP "\K[0-9]+%" | head -n 1)
+
+
+printf "%*s\n" $((($((${#title}*15/10))+$COLUMNS)/2)) "$title"
+

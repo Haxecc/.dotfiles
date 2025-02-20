@@ -1,0 +1,126 @@
+{
+	"layer": "top",
+	"output": "eDP-1",
+	"modules-left": ["custom/launcher","clock","custom/weather"],
+    "modules-center": ["hyprland/workspaces"],
+	"modules-right": ["pulseaudio", "backlight" ,"memory", "cpu", "battery"],
+   
+
+
+ "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "clock": {
+        "format": "󰥔  {:%I:%M}",
+        "format-alt": "󰥔 {:%A, %B %dth, %Y}",
+        "on-click-right": "exec ~/.config/waybar/scripts/OCV " 
+  },
+
+
+    "cpu": {
+        "interval": 5,
+        "format": "  {usage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "kitty -e 'btm'"
+    },
+    "memory": {
+        "interval": 5,
+        "format": "  {}%",
+        "on-click": "kitty -e 'btm'",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "custom/power": {
+      	"format":"⏻ ",
+       	"on-click": "wlogout",
+      	"tooltip": false
+   },
+    "custom/launcher": {
+        "format": "󰣇",
+        "on-click": "exec wofi --show drun",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-muted": "󰸈",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "וֹ",
+            "headset": "  ",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰕿","󰖀","󰖀","󰕾","󰕾" ]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+       "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+	"on-click-right": "kitty"
+	
+     },
+    "backlight": {
+        "format": "{icon}{percent: >3}%",
+        "format-icons": [""],
+        "on-scroll-down": "brightnessctl -c backlight set 5%-",
+        "on-scroll-up": "brightnessctl -c backlight set +5%",
+        "on-click": "~/.config/waybar/scripts/2nd-monitor-brightness up",
+        "on-click-right": "~/.config/waybar/scripts/2nd-monitor-brightness down"
+
+    },
+    "battery": {
+        "states": {
+            "warning": 70,
+            "critical": 45
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "{icon} {capacity}%",
+        "format-plugged": "{icon} {capacity}%",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+
+    },
+
+	"custom/weather": {
+		"format": "{}",
+		"tooltip": true,
+		"interval": 3600,
+		"exec": "python /home/nyx/.config/waybar/waybar-wttr.py",
+		"return-type": "json"
+	}
+
+}
