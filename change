@@ -1,5 +1,5 @@
 #!/bin/zsh
 
-swaybg -i /home/nyx/Templates/.dotfiles/wp/$(ls /home/nyx/Templates/.dotfiles/wp | shuf -n 1) &
+swaybg -i /home/nyx/Templates/.dotfiles/wallpapers/$(ls /home/nyx/Templates/.dotfiles/wallpapers | shuf -n 1) &
 
 #swaybg -i /home/nyx/Templates/.dotfiles/wp/localhost.png
