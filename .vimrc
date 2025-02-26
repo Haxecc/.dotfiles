@@ -8,12 +8,12 @@ set autoindent
 
 call plug#begin()
 
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 set background=dark
 
-colorscheme hackertheme
 
 let mapleader="\<Space>"
 noremap <leader>1 1gt
