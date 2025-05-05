@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/nyx/MyD/CTF/Rever'
+let g:netrw_dirhist_8='/home/nyx/Downloads'
+let g:netrw_dirhist_7='/home/nyx/.local/share/applications'
+let g:netrw_dirhist_6='/home/nyx/Templates/AlpsCatppuccin/Themes/catppuccin'
+let g:netrw_dirhist_5='/home/nyx/Templates/AlpsCatppuccin/Themes'
+let g:netrw_dirhist_4='/home/nyx/Templates/AlpsCatppuccin/gtk-4.0/assets'
+let g:netrw_dirhist_3='/home/nyx/Templates/AlpsCatppuccin/gtk-4.0'
+let g:netrw_dirhist_2='/home/nyx/.mozilla/firefox/iz5pavwu.default-release'
+let g:netrw_dirhist_1='/home/nyx/.mozilla/firefox/iz5pavwu.default-release/extension-store'
+let g:netrw_dirhist_0='/home/nyx/.mozilla/firefox/iz5pavwu.default-release'
